@@ -3,5 +3,8 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Someloseyouth/java-project-61/workflows/hexlet-check/badge.svg)](https://github.com/Someloseyouth/java-project-61/actions)
 
-### Asciinema
+### Asciinema Even
 https://asciinema.org/a/A7D41bfibhClkU2rP6b9iQYbq
+
+### Asciinema Calc
+https://asciinema.org/a/3icDcd8cRJjXSIyDCV4VNhY3m
