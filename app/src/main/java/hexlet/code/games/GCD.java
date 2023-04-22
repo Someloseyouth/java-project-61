@@ -2,8 +2,7 @@ package hexlet.code.games;
 
 import hexlet.code.Cli;
 
-import static hexlet.code.Cli.greet;
-import static hexlet.code.games.Even.getRandomNumber;
+
 
 import java.util.Scanner;
 
@@ -21,11 +20,11 @@ public class GCD {
     }
 
     public static void GCD_Game() {
-        greet();
+        Cli.greet();
         Scanner scan = new Scanner(System.in);
         for (int i = 0; i < 3; i++) {
-            int firstNumber = getRandomNumber(1, 99);
-            int secondNumber = getRandomNumber(1, 99);
+            int firstNumber = Even.getRandomNumber(1, 99);
+            int secondNumber = Even.getRandomNumber(1, 99);
             int correctAnswer = gcdSearch(firstNumber, secondNumber);
             System.out.println("Find the greatest common divisor of given numbers.");
             System.out.println("Question: " + firstNumber + " " + secondNumber);

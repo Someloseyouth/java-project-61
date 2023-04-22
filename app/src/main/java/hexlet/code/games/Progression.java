@@ -5,8 +5,7 @@ import hexlet.code.Cli;
 import java.util.Arrays;
 import java.util.Scanner;
 
-import static hexlet.code.Cli.greet;
-import static hexlet.code.games.Even.getRandomNumber;
+
 
 
 public class Progression {
@@ -14,10 +13,10 @@ public class Progression {
     private static String point;
 
     public static String randomProgression() {
-        int[] geometricProgression = new int[getRandomNumber(5, 10)];
-        int firstNumber = (getRandomNumber(1, 10));
-        int step = (getRandomNumber(1, 10));
-        int replaceSlot = getRandomNumber(geometricProgression.length, 1);
+        int[] geometricProgression = new int[Even.getRandomNumber(5, 10)];
+        int firstNumber = (Even.getRandomNumber(1, 10));
+        int step = (Even.getRandomNumber(1, 10));
+        int replaceSlot = Even.getRandomNumber(geometricProgression.length, 1);
         geometricProgression[0] = firstNumber;
         for (int i = 1; i < geometricProgression.length; i++) {
             geometricProgression[i] = geometricProgression[i - 1] + step;
@@ -27,7 +26,7 @@ public class Progression {
     }
 
     public static void progressionGame() {
-        greet();
+        Cli.greet();
         Scanner scan = new Scanner(System.in);
         for (int i = 0; i < 3; i++) {
             System.out.println("What number is missing in the progression?");

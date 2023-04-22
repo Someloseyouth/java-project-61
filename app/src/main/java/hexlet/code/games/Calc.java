@@ -4,26 +4,28 @@ import hexlet.code.Cli;
 
 import java.util.Scanner;
 
-import static hexlet.code.Cli.greet;
-import static hexlet.code.games.Even.getRandomNumber;
 
 public class Calc {
     public static String getRandomOperation() {
-        int chooseOperation = getRandomNumber(1, 3);
-        return switch (chooseOperation) {
-            case 1 -> "+";
-            case 2 -> "-";
-            case 3 -> "*";
-            default -> null;
-        };
+        int chooseOperation = Even.getRandomNumber(1, 3);
+        switch (chooseOperation) {
+            case 1:
+                return "+";
+            case 2:
+                return "-";
+            case 3:
+                return "*";
+            default:
+                return null;
+        }
     }
 
     public static void calcGame() {
-        greet();
+        Cli.greet();
         Scanner scan = new Scanner(System.in);
         for (int i = 0; i < 3; i++) {
-            int firstNumber = getRandomNumber(1, 99);
-            int secondNumber = getRandomNumber(1, 99);
+            int firstNumber = Even.getRandomNumber(1, 99);
+            int secondNumber = Even.getRandomNumber(1, 99);
             int correctAnswer = 0;
             String operation = getRandomOperation();
             String example = firstNumber + " " + operation + " " + secondNumber;

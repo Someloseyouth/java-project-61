@@ -5,11 +5,10 @@ import hexlet.code.Cli;
 import java.math.BigInteger;
 import java.util.Scanner;
 
-import static hexlet.code.Cli.greet;
 
 public class Prime {
     public static void primeGame() {
-        greet();
+        Cli.greet();
         Scanner scan = new Scanner(System.in);
         for (int i = 0; i < 3; i++) {
             Integer number = (int) ((Math.random() * (100 - 1)) + 1);

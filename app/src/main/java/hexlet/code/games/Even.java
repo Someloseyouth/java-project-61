@@ -4,8 +4,6 @@ import hexlet.code.Cli;
 
 import java.util.Scanner;
 
-import static hexlet.code.Cli.greet;
-
 
 public class Even {
 
@@ -15,7 +13,7 @@ public class Even {
     }
 
     public static void evenGame() {
-        greet();
+        Cli.greet();
         Scanner scan = new Scanner(System.in);
         for (int i = 0; i < 3; i++) {
             int number = getRandomNumber(1, 99);
