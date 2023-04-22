@@ -1,22 +1,24 @@
-package hexlet.code;
+package hexlet.code.games;
+
+import hexlet.code.Cli;
 
 import java.util.Scanner;
+
+import static hexlet.code.Cli.greet;
 
 
 public class Even {
 
-    public static int getRandomNumber() {
-        return (int) (1 + Math.random() * 99);
+
+    public static int getRandomNumber(int min, int max) {
+        return (int) ((Math.random() * (max - min)) + min);
     }
 
     public static void evenGame() {
-        System.out.println("Welcome to the Brain Games!");
+        greet();
         Scanner scan = new Scanner(System.in);
-        System.out.println("May I have your name?");
-        String name = scan.next();
-        System.out.println("Hello " + name + "!");
         for (int i = 0; i < 3; i++) {
-            int number = getRandomNumber();
+            int number = getRandomNumber(1, 99);
             String correctAnswer;
             if (number % 2 == 0) {
                 correctAnswer = "yes";
@@ -30,21 +32,21 @@ public class Even {
             if (answer.equals(correctAnswer)) {
                 System.out.println("Correct!");
                 if (i == 2) {
-                    System.out.println("Congratulations, " + name + "!");
+                    System.out.println("Congratulations, " + Cli.name + "!");
+                    System.exit(0);
                 }
             } else if (answer.equals("yes")) {
                 System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.");
-                System.out.println("Let's try again, " + name + "!");
-                break;
+                System.out.println("Let's try again, " + Cli.name + "!");
+                System.exit(0);
             } else if (answer.equals("no")) {
                 System.out.println("'no' is wrong answer ;(. Correct answer was 'yes'.");
-                System.out.println("Let's try again, " + name + "!");
-                break;
-            }
-            else{
+                System.out.println("Let's try again, " + Cli.name + "!");
+                System.exit(0);
+            } else {
                 System.out.println("Wrong answer");
-                System.out.println("Let's try again, " + name + "!");
-                break;
+                System.out.println("Let's try again, " + Cli.name + "!");
+                System.exit(0);
             }
         }
 
