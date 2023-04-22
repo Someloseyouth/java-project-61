@@ -1,13 +1,10 @@
 package hexlet.code;
 
+import hexlet.code.games.*;
+
 import java.util.Scanner;
 
-import static hexlet.code.Cli.greet;
-import static hexlet.code.games.Calc.calcGame;
-import static hexlet.code.games.Even.evenGame;
-import static hexlet.code.games.GCD.GCD_Game;
-import static hexlet.code.games.Prime.primeGame;
-import static hexlet.code.games.Progression.progressionGame;
+
 
 public class App {
     public static void main(String[] args) {
@@ -27,19 +24,19 @@ public class App {
             case 0:
                 break;
             case 1:
-                greet();
+                Cli.greet();
                 break;
             case 2:
-                evenGame();
+                Even.evenGame();
                 break;
             case 3:
-                calcGame();
+                Calc.calcGame();
             case 4:
-                GCD_Game();
+                GCD.GCD_Game();
             case 5:
-                progressionGame();
+                Progression.progressionGame();
             case 6:
-                primeGame();
+                Prime.primeGame();
         }
     }
 
