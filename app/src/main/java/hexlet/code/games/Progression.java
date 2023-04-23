@@ -36,7 +36,7 @@ public class Progression {
         Scanner scan = new Scanner(System.in);
         for (int i = 0; i < 3; i++) {
             System.out.println("What number is missing in the progression?");
-            System.out.println("Question: " );
+            System.out.print("Question: " );
             randomProgression();
             System.out.println();
             int answer = scan.nextInt();
