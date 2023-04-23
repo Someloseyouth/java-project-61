@@ -6,12 +6,12 @@ public class Cli {
 
     private static String name;
 
-    public static void setName(){
+    public static void setName() {
         Scanner scan = new Scanner(System.in);
         name = scan.next();
     }
 
-    public static String getName(){
+    public static String getName() {
         return name;
     }
 

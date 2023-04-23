@@ -10,10 +10,13 @@ public class Progression {
     private static int correctAnswer;
 
     public static void randomProgression() {
-        int[] geometricProgression = new int[Even.getRandomNumber(5, 10)];
-        int firstNumber = (Even.getRandomNumber(1, 10));
-        int step = (Even.getRandomNumber(1, 10));
-        int replaceSlot = Even.getRandomNumber(geometricProgression.length, 1);
+        int rMin = 1;
+        int rMax = 10;
+        int rMinGeometricProgression = 5;
+        int[] geometricProgression = new int[Even.getRandomNumber(rMinGeometricProgression, rMax)];
+        int firstNumber = (Even.getRandomNumber(rMin, rMax));
+        int step = (Even.getRandomNumber(rMin, rMax));
+        int replaceSlot = Even.getRandomNumber(rMin, geometricProgression.length);
         geometricProgression[0] = firstNumber;
         for (int i = 1; i < geometricProgression.length; i++) {
             geometricProgression[i] = geometricProgression[i - 1] + step;

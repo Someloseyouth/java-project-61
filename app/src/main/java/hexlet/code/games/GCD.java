@@ -18,12 +18,14 @@ public class GCD {
         return gcd;
     }
 
-    public static void GCDGame() {
+    public static void gcdGame() {
+        int rMin = 1;
+        int rMax = 99;
         Cli.greet();
         Scanner scan = new Scanner(System.in);
         for (int i = 0; i < 3; i++) {
-            int firstNumber = Even.getRandomNumber(1, 99);
-            int secondNumber = Even.getRandomNumber(1, 99);
+            int firstNumber = Even.getRandomNumber(rMin, rMax);
+            int secondNumber = Even.getRandomNumber(rMin, rMax);
             int correctAnswer = gcdSearch(firstNumber, secondNumber);
             System.out.println("Find the greatest common divisor of given numbers.");
             System.out.println("Question: " + firstNumber + " " + secondNumber);

@@ -7,12 +7,14 @@ import java.util.Scanner;
 
 public class Calc {
     public static String getRandomOperation() {
-        int chooseOperation = Even.getRandomNumber(1, 3);
+        int rMin = 1;
+        int rMax = 3;
+        int chooseOperation = Even.getRandomNumber(rMin, rMax);
         return switch (chooseOperation) {
             case 1 -> "+";
             case 2 -> "-";
             case 3 -> "*";
-            default -> null;
+            default -> "Something went wrong, sorry. Try again.";
         };
     }
 
@@ -20,8 +22,10 @@ public class Calc {
         Cli.greet();
         Scanner scan = new Scanner(System.in);
         for (int i = 0; i < 3; i++) {
-            int firstNumber = Even.getRandomNumber(1, 99);
-            int secondNumber = Even.getRandomNumber(1, 99);
+            int rMin = 1;
+            int rMax = 99;
+            int firstNumber = Even.getRandomNumber(rMin, rMax);
+            int secondNumber = Even.getRandomNumber(rMin, rMax);
             int correctAnswer = 0;
             String operation = getRandomOperation();
             String example = firstNumber + " " + operation + " " + secondNumber;
@@ -29,6 +33,7 @@ public class Calc {
                 case "+" -> correctAnswer = firstNumber + secondNumber;
                 case "-" -> correctAnswer = firstNumber - secondNumber;
                 case "*" -> correctAnswer = firstNumber * secondNumber;
+                default -> System.out.println("Something went wrong, sorry. Try again.");
             }
             System.out.println("What is the result of the expression?");
             System.out.println("Question: " + example);

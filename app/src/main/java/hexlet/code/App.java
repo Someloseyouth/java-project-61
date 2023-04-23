@@ -11,6 +11,14 @@ import java.util.Scanner;
 
 
 public class App {
+    static final int EXIT = 0;
+    static final int GREET = 1;
+    static final int GAME1 = 2;
+    static final int GAME2 = 3;
+    static final int GAME3 = 4;
+    static final int GAME4 = 5;
+    static final int GAME5 = 6;
+
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         System.out.println("Please enter the game number and press Enter.");
@@ -25,16 +33,16 @@ public class App {
         System.out.println("Your choice: " + choice);
         System.out.println();
         switch (choice) {
-            case 0 -> {
+            case EXIT -> {
                 System.out.println("Exit");
                 System.exit(0);
             }
-            case 1 -> Cli.greet();
-            case 2 -> Even.evenGame();
-            case 3 -> Calc.calcGame();
-            case 4 -> GCD.GCDGame();
-            case 5 -> Progression.progressionGame();
-            case 6 -> Prime.primeGame();
+            case GREET -> Cli.greet();
+            case GAME1 -> Even.evenGame();
+            case GAME2 -> Calc.calcGame();
+            case GAME3 -> GCD.gcdGame();
+            case GAME4 -> Progression.progressionGame();
+            case GAME5 -> Prime.primeGame();
             default -> System.out.println("Wrong number");
         }
     }

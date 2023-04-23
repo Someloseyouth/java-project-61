@@ -14,9 +14,11 @@ public class Even {
 
     public static void evenGame() {
         Cli.greet();
+        int rMin = 1;
+        int rMax = 99;
         Scanner scan = new Scanner(System.in);
         for (int i = 0; i < 3; i++) {
-            int number = getRandomNumber(1, 99);
+            int number = getRandomNumber(rMin, rMax);
             String correctAnswer;
             if (number % 2 == 0) {
                 correctAnswer = "yes";
