@@ -8,16 +8,12 @@ import java.util.Scanner;
 public class Calc {
     public static String getRandomOperation() {
         int chooseOperation = Even.getRandomNumber(1, 3);
-        switch (chooseOperation) {
-            case 1:
-                return "+";
-            case 2:
-                return "-";
-            case 3:
-                return "*";
-            default:
-                return null;
-        }
+        return switch (chooseOperation) {
+            case 1 -> "+";
+            case 2 -> "-";
+            case 3 -> "*";
+            default -> null;
+        };
     }
 
     public static void calcGame() {
@@ -41,12 +37,12 @@ public class Calc {
             if (answer == correctAnswer) {
                 System.out.println("Correct!");
                 if (i == 2) {
-                    System.out.println("Congratulations, " + Cli.name + "!");
+                    System.out.println("Congratulations, " + Cli.getName() + "!");
                     System.exit(0);
                 }
             } else {
                 System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was " + "'" + correctAnswer + "'" + ".");
-                System.out.println("Let's try again, " + Cli.name + "!");
+                System.out.println("Let's try again, " + Cli.getName() + "!");
                 System.exit(0);
             }
         }

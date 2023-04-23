@@ -3,7 +3,6 @@ package hexlet.code.games;
 import hexlet.code.Cli;
 
 
-
 import java.util.Scanner;
 
 
@@ -19,7 +18,7 @@ public class GCD {
         return gcd;
     }
 
-    public static void GCD_Game() {
+    public static void GCDGame() {
         Cli.greet();
         Scanner scan = new Scanner(System.in);
         for (int i = 0; i < 3; i++) {
@@ -33,12 +32,13 @@ public class GCD {
             if (answer == correctAnswer) {
                 System.out.println("Correct!");
                 if (i == 2) {
-                    System.out.println("Congratulations, " + Cli.name + "!");
+                    System.out.println("Congratulations, " + Cli.getName() + "!");
                     System.exit(0);
                 }
             } else {
-                System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was " + "'" + correctAnswer + "'" + ".");
-                System.out.println("Let's try again, " + Cli.name + "!");
+                System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was "
+                        + "'" + correctAnswer + "'" + ".");
+                System.out.println("Let's try again, " + Cli.getName() + "!");
                 System.exit(0);
             }
         }

@@ -14,7 +14,7 @@ public class Prime {
         if (number <= 1) {
             return false;
         }
-        for (int j = 2; j <= number / 2;  j++) {
+        for (int j = 2; j <= number / 2; j++) {
             if (number % j == 0) {
                 return false;
             }
@@ -26,7 +26,7 @@ public class Prime {
         Cli.greet();
         Scanner scan = new Scanner(System.in);
         for (int i = 0; i < 3; i++) {
-            int number = (Even.getRandomNumber(1,99));
+            int number = (Even.getRandomNumber(1, 99));
             String correctAnswer;
             if (ifPrime(number)) {
                 correctAnswer = "yes";
@@ -40,20 +40,20 @@ public class Prime {
             if (answer.equals(correctAnswer)) {
                 System.out.println("Correct!");
                 if (i == 2) {
-                    System.out.println("Congratulations, " + Cli.name + "!");
+                    System.out.println("Congratulations, " + Cli.getName() + "!");
                     System.exit(0);
                 }
             } else if (answer.equals("yes")) {
                 System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.");
-                System.out.println("Let's try again, " + Cli.name + "!");
+                System.out.println("Let's try again, " + Cli.getName() + "!");
                 System.exit(0);
             } else if (answer.equals("no")) {
                 System.out.println("'no' is wrong answer ;(. Correct answer was 'yes'.");
-                System.out.println("Let's try again, " + Cli.name + "!");
+                System.out.println("Let's try again, " + Cli.getName() + "!");
                 System.exit(0);
             } else {
                 System.out.println("Wrong answer");
-                System.out.println("Let's try again, " + Cli.name + "!");
+                System.out.println("Let's try again, " + Cli.getName() + "!");
                 System.exit(0);
             }
         }

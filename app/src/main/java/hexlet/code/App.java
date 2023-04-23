@@ -25,30 +25,17 @@ public class App {
         System.out.println("Your choice: " + choice);
         System.out.println();
         switch (choice) {
-            case 0:
+            case 0 -> {
+                System.out.println("Exit");
                 System.exit(0);
-                break;
-            case 1:
-                Cli.greet();
-                break;
-            case 2:
-                Even.evenGame();
-                break;
-            case 3:
-                Calc.calcGame();
-                break;
-            case 4:
-                GCD.GCD_Game();
-                break;
-            case 5:
-                Progression.progressionGame();
-                break;
-            case 6:
-                Prime.primeGame();
-                break;
-            default:
-                System.out.println("Wrong number");
-                break;
+            }
+            case 1 -> Cli.greet();
+            case 2 -> Even.evenGame();
+            case 3 -> Calc.calcGame();
+            case 4 -> GCD.GCDGame();
+            case 5 -> Progression.progressionGame();
+            case 6 -> Prime.primeGame();
+            default -> System.out.println("Wrong number");
         }
     }
 
