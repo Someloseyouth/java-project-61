@@ -18,6 +18,16 @@ public class Calc {
         };
     }
 
+    public static int getCorrectAnswer(String operation, int firstNumber, int secondNumber) {
+        int correctAnsw = 0;
+        return switch (operation) {
+            case "+" -> correctAnsw = firstNumber + secondNumber;
+            case "-" -> correctAnsw = firstNumber - secondNumber;
+            case "*" -> correctAnsw = firstNumber * secondNumber;
+            default -> 0;
+        };
+    }
+
     public static void calcGame() {
         Cli.greet();
         Scanner scan = new Scanner(System.in);
@@ -26,15 +36,9 @@ public class Calc {
             int rMax = 99;
             int firstNumber = Even.getRandomNumber(rMin, rMax);
             int secondNumber = Even.getRandomNumber(rMin, rMax);
-            int correctAnswer = 0;
             String operation = getRandomOperation();
+            int correctAnswer = getCorrectAnswer(operation, firstNumber, secondNumber);
             String example = firstNumber + " " + operation + " " + secondNumber;
-            switch (operation) {
-                case "+" -> correctAnswer = firstNumber + secondNumber;
-                case "-" -> correctAnswer = firstNumber - secondNumber;
-                case "*" -> correctAnswer = firstNumber * secondNumber;
-                default -> System.out.println("Something went wrong, sorry. Try again.");
-            }
             System.out.println("What is the result of the expression?");
             System.out.println("Question: " + example);
             int answer = scan.nextInt();
@@ -46,7 +50,8 @@ public class Calc {
                     System.exit(0);
                 }
             } else {
-                System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was " + "'" + correctAnswer + "'" + ".");
+                System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was "
+                        + "'" + correctAnswer + "'" + ".");
                 System.out.println("Let's try again, " + Cli.getName() + "!");
                 System.exit(0);
             }
