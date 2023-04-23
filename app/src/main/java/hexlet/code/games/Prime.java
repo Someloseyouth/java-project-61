@@ -2,20 +2,33 @@ package hexlet.code.games;
 
 import hexlet.code.Cli;
 
-import java.math.BigInteger;
 import java.util.Scanner;
 
 
 public class Prime {
+
+    public static boolean ifPrime(int number) {
+        if (number == 2) {
+            return true;
+        }
+        if (number <= 1) {
+            return false;
+        }
+        for (int j = 2; j <= number / 2;  j++) {
+            if (number % j == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public static void primeGame() {
         Cli.greet();
         Scanner scan = new Scanner(System.in);
         for (int i = 0; i < 3; i++) {
-            Integer number = (int) ((Math.random() * (100 - 1)) + 1);
+            int number = (Even.getRandomNumber(1,99));
             String correctAnswer;
-            BigInteger bigInteger = BigInteger.valueOf(number);
-            boolean probablePrime = bigInteger.isProbablePrime((int) Math.log(number));
-            if (probablePrime == true) {
+            if (ifPrime(number)) {
                 correctAnswer = "yes";
             } else {
                 correctAnswer = "no";
