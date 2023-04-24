@@ -8,10 +8,10 @@ import java.util.Scanner;
 public class Progression {
 
     private static int correctAnswer;
+    static int rMin = 1;
+    static int rMax = 10;
 
     public static void randomProgression() {
-        int rMin = 1;
-        int rMax = 10;
         int rMinGeometricProgression = 5;
         int[] geometricProgression = new int[Even.getRandomNumber(rMinGeometricProgression, rMax)];
         int firstNumber = (Even.getRandomNumber(rMin, rMax));

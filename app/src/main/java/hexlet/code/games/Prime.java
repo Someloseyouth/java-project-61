@@ -23,12 +23,10 @@ public class Prime {
     }
 
     public static void primeGame() {
-        int rMin = 1;
-        int rMax = 99;
         Cli.greet();
         Scanner scan = new Scanner(System.in);
         for (int i = 0; i < 3; i++) {
-            int number = (Even.getRandomNumber(rMin, rMax));
+            int number = Even.getMaxRandomNumber();
             String correctAnswer;
             if (ifPrime(number)) {
                 correctAnswer = "yes";

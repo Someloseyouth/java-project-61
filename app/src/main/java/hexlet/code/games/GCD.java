@@ -19,13 +19,11 @@ public class GCD {
     }
 
     public static void gcdGame() {
-        int rMin = 1;
-        int rMax = 99;
         Cli.greet();
         Scanner scan = new Scanner(System.in);
         for (int i = 0; i < 3; i++) {
-            int firstNumber = Even.getRandomNumber(rMin, rMax);
-            int secondNumber = Even.getRandomNumber(rMin, rMax);
+            int firstNumber = Even.getMaxRandomNumber();
+            int secondNumber = Even.getMaxRandomNumber();
             int correctAnswer = gcdSearch(firstNumber, secondNumber);
             System.out.println("Find the greatest common divisor of given numbers.");
             System.out.println("Question: " + firstNumber + " " + secondNumber);

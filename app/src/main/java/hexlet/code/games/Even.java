@@ -12,13 +12,15 @@ public class Even {
         return (int) ((Math.random() * (max - min)) + min);
     }
 
+    public static int getMaxRandomNumber(){
+        return (int) ((Math.random() * (99 - 1)) + 1);
+    }
+
     public static void evenGame() {
         Cli.greet();
-        int rMin = 1;
-        int rMax = 99;
         Scanner scan = new Scanner(System.in);
         for (int i = 0; i < 3; i++) {
-            int number = getRandomNumber(rMin, rMax);
+            int number = getMaxRandomNumber();
             String correctAnswer;
             if (number % 2 == 0) {
                 correctAnswer = "yes";

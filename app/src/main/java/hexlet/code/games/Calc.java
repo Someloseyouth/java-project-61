@@ -6,24 +6,29 @@ import java.util.Scanner;
 
 
 public class Calc {
+   static final int PLUS = 1;
+    static final int MINUS = 2;
+    static final int MULTIPLY = 3;
+
+    static int rMin = 1;
+    static int rMax = 3;
+
+
     public static String getRandomOperation() {
-        int rMin = 1;
-        int rMax = 3;
         int chooseOperation = Even.getRandomNumber(rMin, rMax);
         return switch (chooseOperation) {
-            case 1 -> "+";
-            case 2 -> "-";
-            case 3 -> "*";
+            case PLUS -> "+";
+            case MINUS -> "-";
+            case MULTIPLY -> "*";
             default -> "Something went wrong, sorry. Try again.";
         };
     }
 
     public static int getCorrectAnswer(String operation, int firstNumber, int secondNumber) {
-        int correctAnsw = 0;
         return switch (operation) {
-            case "+" -> correctAnsw = firstNumber + secondNumber;
-            case "-" -> correctAnsw = firstNumber - secondNumber;
-            case "*" -> correctAnsw = firstNumber * secondNumber;
+            case "+" -> firstNumber + secondNumber;
+            case "-" -> firstNumber - secondNumber;
+            case "*" -> firstNumber * secondNumber;
             default -> 0;
         };
     }
@@ -32,10 +37,8 @@ public class Calc {
         Cli.greet();
         Scanner scan = new Scanner(System.in);
         for (int i = 0; i < 3; i++) {
-            int rMin = 1;
-            int rMax = 99;
-            int firstNumber = Even.getRandomNumber(rMin, rMax);
-            int secondNumber = Even.getRandomNumber(rMin, rMax);
+            int firstNumber = Even.getMaxRandomNumber();
+            int secondNumber = Even.getMaxRandomNumber();
             String operation = getRandomOperation();
             int correctAnswer = getCorrectAnswer(operation, firstNumber, secondNumber);
             String example = firstNumber + " " + operation + " " + secondNumber;
