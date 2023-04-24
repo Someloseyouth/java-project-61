@@ -21,7 +21,7 @@ public class GCD {
     public static void gcdGame() {
         Cli.greet();
         Scanner scan = new Scanner(System.in);
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; true; i++) {
             int firstNumber = Even.getMaxRandomNumber();
             int secondNumber = Even.getMaxRandomNumber();
             int correctAnswer = gcdSearch(firstNumber, secondNumber);

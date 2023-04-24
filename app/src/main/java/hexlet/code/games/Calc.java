@@ -6,16 +6,16 @@ import java.util.Scanner;
 
 
 public class Calc {
-   static final int PLUS = 1;
+    static final int PLUS = 1;
     static final int MINUS = 2;
     static final int MULTIPLY = 3;
 
-    static int rMin = 1;
-    static int rMax = 3;
+    static final int R_MIN = 1;
+    static final int R_MAX = 3;
 
 
     public static String getRandomOperation() {
-        int chooseOperation = Even.getRandomNumber(rMin, rMax);
+        int chooseOperation = Even.getRandomNumber(R_MIN, R_MAX);
         return switch (chooseOperation) {
             case PLUS -> "+";
             case MINUS -> "-";
@@ -36,7 +36,7 @@ public class Calc {
     public static void calcGame() {
         Cli.greet();
         Scanner scan = new Scanner(System.in);
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; true; i++) {
             int firstNumber = Even.getMaxRandomNumber();
             int secondNumber = Even.getMaxRandomNumber();
             String operation = getRandomOperation();

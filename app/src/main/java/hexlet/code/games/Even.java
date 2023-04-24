@@ -7,19 +7,22 @@ import java.util.Scanner;
 
 public class Even {
 
+    static final int R_MIN = 1;
+    static final int R_MAX = 99;
+
 
     public static int getRandomNumber(int min, int max) {
         return (int) ((Math.random() * (max - min)) + min);
     }
 
-    public static int getMaxRandomNumber(){
-        return (int) ((Math.random() * (99 - 1)) + 1);
+    public static int getMaxRandomNumber() {
+        return (int) ((Math.random() * (R_MAX - R_MIN)) + R_MIN);
     }
 
     public static void evenGame() {
         Cli.greet();
         Scanner scan = new Scanner(System.in);
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; true; i++) {
             int number = getMaxRandomNumber();
             String correctAnswer;
             if (number % 2 == 0) {

@@ -8,15 +8,16 @@ import java.util.Scanner;
 public class Progression {
 
     private static int correctAnswer;
-    static int rMin = 1;
-    static int rMax = 10;
+    static final int R_MIN = 1;
+    static final int R_MAX = 10;
+    static final int R_MIN_GEOM_PR = 5;
 
     public static void randomProgression() {
-        int rMinGeometricProgression = 5;
-        int[] geometricProgression = new int[Even.getRandomNumber(rMinGeometricProgression, rMax)];
-        int firstNumber = (Even.getRandomNumber(rMin, rMax));
-        int step = (Even.getRandomNumber(rMin, rMax));
-        int replaceSlot = Even.getRandomNumber(rMin, geometricProgression.length);
+
+        int[] geometricProgression = new int[Even.getRandomNumber(R_MIN_GEOM_PR, R_MAX)];
+        int firstNumber = (Even.getRandomNumber(R_MIN, R_MAX));
+        int step = (Even.getRandomNumber(R_MIN, R_MAX));
+        int replaceSlot = Even.getRandomNumber(R_MIN, geometricProgression.length);
         geometricProgression[0] = firstNumber;
         for (int i = 1; i < geometricProgression.length; i++) {
             geometricProgression[i] = geometricProgression[i - 1] + step;
@@ -34,7 +35,7 @@ public class Progression {
     public static void progressionGame() {
         Cli.greet();
         Scanner scan = new Scanner(System.in);
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; true; i++) {
             System.out.println("What number is missing in the progression?");
             System.out.print("Question: ");
             randomProgression();
