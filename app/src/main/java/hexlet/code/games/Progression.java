@@ -5,7 +5,7 @@ import hexlet.code.Engine;
 
 
 public class Progression {
-    private final static String RULES = "What number is missing in the progression?";
+    private static final String RULES = "What number is missing in the progression?";
 
     private static int correctAnswer;
     static final int R_MIN = 1;
