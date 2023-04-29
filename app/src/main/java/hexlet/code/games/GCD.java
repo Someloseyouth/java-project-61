@@ -1,12 +1,11 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
-
-
-import java.util.Scanner;
+import hexlet.code.Engine;
 
 
 public class GCD {
+
+    private static final String RULES = "Find the greatest common divisor of given numbers.";
 
     public static int gcdSearch(int n1, int n2) {
         int gcd = 1;
@@ -19,28 +18,13 @@ public class GCD {
     }
 
     public static void gcdGame() {
-        Cli.greet();
-        Scanner scan = new Scanner(System.in);
-        for (int i = 0; true; i++) {
-            int firstNumber = Even.getMaxRandomNumber();
-            int secondNumber = Even.getMaxRandomNumber();
-            int correctAnswer = gcdSearch(firstNumber, secondNumber);
-            System.out.println("Find the greatest common divisor of given numbers.");
-            System.out.println("Question: " + firstNumber + " " + secondNumber);
-            int answer = scan.nextInt();
-            System.out.println("Your answer: " + answer);
-            if (answer == correctAnswer) {
-                System.out.println("Correct!");
-                if (i == 2) {
-                    System.out.println("Congratulations, " + Cli.getName() + "!");
-                    System.exit(0);
-                }
-            } else {
-                System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was "
-                        + "'" + correctAnswer + "'" + ".");
-                System.out.println("Let's try again, " + Cli.getName() + "!");
-                System.exit(0);
-            }
+        String[][] questionsAnswers = new String[Engine.COUNT_OF_ROUNDS][2];
+        for (int i = 0; i < Engine.COUNT_OF_ROUNDS; i++) {
+            int firstNumber = Engine.getMaxRandomNumber();
+            int secondNumber = Engine.getMaxRandomNumber();
+            questionsAnswers[i][Engine.QUESTION] = firstNumber + " " + secondNumber;
+            questionsAnswers[i][Engine.ANSWER] = String.valueOf(gcdSearch(firstNumber, secondNumber));
         }
+        Engine.runGame(RULES, questionsAnswers);
     }
 }
