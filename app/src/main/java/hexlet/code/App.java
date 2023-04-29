@@ -9,7 +9,6 @@ import hexlet.code.games.Progression;
 import java.util.Scanner;
 
 
-
 public class App {
     static final int EXIT = 0;
     static final int GREET = 1;
