@@ -2,10 +2,30 @@ package hexlet.code.games;
 
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 
 public class Prime {
     private static final String RULES = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+    private static String[][] questionsAnswers = new String[Engine.COUNT_OF_ROUNDS][2];
+
+    public static void runPrimeGame() {
+        for (int i = 0; i < Engine.COUNT_OF_ROUNDS; i++) {
+            String[] roundData = generateRoundData(i);
+            questionsAnswers[i][Engine.QUESTION] = roundData[0];
+            questionsAnswers[i][Engine.ANSWER] = roundData[1];
+        }
+        Engine.runGame(RULES, questionsAnswers);
+    }
+
+    private static String[] generateRoundData(int i) {
+        String question = String.valueOf(Utils.getMaxRandomNumber());
+        String answer = Prime.ifPrime(Integer.parseInt(question))
+                ? "yes"
+                : "no";
+        String[] Data = {question, answer};
+        return Data;
+    }
 
     public static boolean ifPrime(int number) {
         if (number == 2) {
@@ -22,16 +42,5 @@ public class Prime {
         return true;
     }
 
-    public static void primeGame() {
-        String[][] questionsAnswers = new String[Engine.COUNT_OF_ROUNDS][2];
-        for (int i = 0; i < Engine.COUNT_OF_ROUNDS; i++) {
-            questionsAnswers[i][Engine.QUESTION] = String.valueOf(Engine.getMaxRandomNumber());
 
-            questionsAnswers[i][Engine.ANSWER] =
-                    (Prime.ifPrime(Integer.parseInt(questionsAnswers[i][Engine.QUESTION])))
-                            ? "yes"
-                            : "no";
-        }
-        Engine.runGame(RULES, questionsAnswers);
-    }
 }

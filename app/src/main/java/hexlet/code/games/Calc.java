@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 
 public class Calc {
@@ -11,11 +12,31 @@ public class Calc {
     static final int R_MIN = 1;
     static final int R_MAX = 3;
 
-    static final String RULES = "What is the result of the expression?";
+    private static String[][] questionsAnswers = new String[Engine.COUNT_OF_ROUNDS][2];
 
+    private static final String RULES = "What is the result of the expression?";
+
+    public static void runCalcGame() {
+        for (int i = 0; i < Engine.COUNT_OF_ROUNDS; i++) {
+            String[] roundData = generateRoundData(i);
+            questionsAnswers[i][Engine.QUESTION] = roundData[0];
+            questionsAnswers[i][Engine.ANSWER] = roundData[1];
+        }
+        Engine.runGame(RULES, questionsAnswers);
+    }
+
+    private static String[] generateRoundData(int i) {
+        int firstNumber = Utils.getMaxRandomNumber();
+        int secondNumber = Utils.getMaxRandomNumber();
+        String operation = getRandomOperation();
+        String question = firstNumber + " " + operation + " " + secondNumber;
+        String answer = String.valueOf(getCorrectAnswer(operation, firstNumber, secondNumber));
+        String[] Data = {question, answer};
+        return Data;
+    }
 
     public static String getRandomOperation() {
-        int chooseOperation = Engine.getRandomNumber(R_MIN, R_MAX);
+        int chooseOperation = Utils.getRandomNumber(R_MIN, R_MAX);
         return switch (chooseOperation) {
             case PLUS -> "+";
             case MINUS -> "-";
@@ -33,16 +54,5 @@ public class Calc {
         };
     }
 
-    public static void calcGame() {
-        String[][] questionsAnswers = new String[Engine.COUNT_OF_ROUNDS][2];
 
-        for (int i = 0; i < Engine.COUNT_OF_ROUNDS; i++) {
-            int firstNumber = Engine.getMaxRandomNumber();
-            int secondNumber = Engine.getMaxRandomNumber();
-            String operation = getRandomOperation();
-            questionsAnswers[i][Engine.QUESTION] = firstNumber + " " + operation + " " + secondNumber;
-            questionsAnswers[i][Engine.ANSWER] = String.valueOf(getCorrectAnswer(operation, firstNumber, secondNumber));
-        }
-        Engine.runGame(RULES, questionsAnswers);
-    }
 }

@@ -12,11 +12,11 @@ import java.util.Scanner;
 public class App {
     static final int EXIT = 0;
     static final int GREET = 1;
-    static final int GAME1 = 2;
-    static final int GAME2 = 3;
-    static final int GAME3 = 4;
-    static final int GAME4 = 5;
-    static final int GAME5 = 6;
+    static final int EVEN_GAME = 2;
+    static final int CALC_GAME = 3;
+    static final int GCD_GAME = 4;
+    static final int PROGRESSION_GAME = 5;
+    static final int PRIME_GAME = 6;
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
@@ -32,16 +32,13 @@ public class App {
         System.out.println("Your choice: " + choice);
         System.out.println();
         switch (choice) {
-            case EXIT -> {
-                System.out.println("Exit");
-                System.exit(0);
-            }
+            case EXIT -> System.out.println("Exit");
             case GREET -> Cli.greet();
-            case GAME1 -> Even.evenGame();
-            case GAME2 -> Calc.calcGame();
-            case GAME3 -> GCD.gcdGame();
-            case GAME4 -> Progression.progressionGame();
-            case GAME5 -> Prime.primeGame();
+            case EVEN_GAME -> Even.runEvenGame();
+            case CALC_GAME -> Calc.runCalcGame();
+            case GCD_GAME -> GCD.runGCDGame();
+            case PROGRESSION_GAME -> Progression.runProgressionGame();
+            case PRIME_GAME -> Prime.runPrimeGame();
             default -> System.out.println("Wrong number");
         }
     }
