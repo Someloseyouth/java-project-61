@@ -23,8 +23,8 @@ public class Prime {
         String answer = Prime.ifPrime(Integer.parseInt(question))
                 ? "yes"
                 : "no";
-        String[] Data = {question, answer};
-        return Data;
+        String[] data = {question, answer};
+        return data;
     }
 
     public static boolean ifPrime(int number) {

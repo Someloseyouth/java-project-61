@@ -23,8 +23,8 @@ public class GCD {
         int secondNumber = Utils.getMaxRandomNumber();
         String question = firstNumber + " " + secondNumber;
         String answer = String.valueOf(gcdSearch(firstNumber, secondNumber));
-        String[] Data = {question, answer};
-        return Data;
+        String[] data = {question, answer};
+        return data;
     }
 
     public static int gcdSearch(int n1, int n2) {

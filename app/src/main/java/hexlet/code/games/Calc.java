@@ -31,8 +31,8 @@ public class Calc {
         String operation = getRandomOperation();
         String question = firstNumber + " " + operation + " " + secondNumber;
         String answer = String.valueOf(getCorrectAnswer(operation, firstNumber, secondNumber));
-        String[] Data = {question, answer};
-        return Data;
+        String[] data = {question, answer};
+        return data;
     }
 
     public static String getRandomOperation() {

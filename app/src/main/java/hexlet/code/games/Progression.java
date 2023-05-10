@@ -26,8 +26,8 @@ public class Progression {
         String[] randomProgress = randomProgression();
         String question = randomProgress[0];
         String answer = randomProgress[1];
-        String[] Data = {question, answer};
-        return Data;
+        String[] data = {question, answer};
+        return data;
     }
 
     public static String[] randomProgression() {

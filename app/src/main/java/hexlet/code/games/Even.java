@@ -24,8 +24,8 @@ public class Even {
         String answer = Even.isEven(Integer.parseInt(question))
                 ? "yes"
                 : "no";
-        String[] Data = {question, answer};
-        return Data;
+        String[] data = {question, answer};
+        return data;
     }
 
     private static boolean isEven(int number) {
