@@ -31,7 +31,8 @@ public class Progression {
         return data;
     }
 
-    public static String answerRandomProgression(int geometricProgressionLength, int firstNumber, int step, int replaceSlot) {
+    public static String answerRandomProgression(int geometricProgressionLength, int firstNumber, int step,
+                                                 int replaceSlot) {
         String[] randProgression;
         randProgression = generateRandomProgression(geometricProgressionLength, firstNumber, step);
         String correctAnswer = randProgression[replaceSlot];
@@ -39,7 +40,8 @@ public class Progression {
     }
 
 
-    public static String printRandomProgression(int geometricProgressionLength, int firstNumber, int step, int replaceSlot) {
+    public static String printRandomProgression(int geometricProgressionLength, int firstNumber, int step,
+                                                int replaceSlot) {
         String[] randProgression;
         randProgression = generateRandomProgression(geometricProgressionLength, firstNumber, step);
         randProgression[replaceSlot] = "..";
