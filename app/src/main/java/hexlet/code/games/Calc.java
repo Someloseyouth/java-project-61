@@ -12,15 +12,12 @@ public class Calc {
     static final int R_MIN = 1;
     static final int R_MAX = 3;
 
-    private static String[][] questionsAnswers = new String[Engine.COUNT_OF_ROUNDS][2];
-
     private static final String RULES = "What is the result of the expression?";
 
     public static void runCalcGame() {
+        String[][] questionsAnswers = new String[Engine.COUNT_OF_ROUNDS][2];
         for (int i = 0; i < Engine.COUNT_OF_ROUNDS; i++) {
-            String[] roundData = generateRoundData(i);
-            questionsAnswers[i][Engine.QUESTION] = roundData[0];
-            questionsAnswers[i][Engine.ANSWER] = roundData[1];
+            questionsAnswers[i] = generateRoundData(i);
         }
         Engine.runGame(RULES, questionsAnswers);
     }
